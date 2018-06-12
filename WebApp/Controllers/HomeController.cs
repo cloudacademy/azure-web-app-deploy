@@ -12,6 +12,9 @@ namespace WebApp.Controllers
     {
         public IActionResult Index()
         {
+            var testSetting = Environment.GetEnvironmentVariable("test-setting") ?? "undefined";
+            ViewData["Message"] = $"The value of test-setting is {testSetting}";
+
             return View();
         }
 
